@@ -12,9 +12,6 @@
         <p v-bind="childControlFather">
             用来测试 - 子组件控制父组件
         </p>
-        <br/>
-        <br/>
-        <br/>
         <!--缓存组件状态-避免重复渲染组件带来的性能问题-->
         <keep-alive>
             <a-component parameter="112" v-bind:param2="213" param3="12312321"></a-component>
@@ -26,6 +23,7 @@
 <script>
     import AComponent from './AComponent.vue'
     import CommonComponent from './CommonComponent.vue'
+
 
     //在模块系统中局部注册一个组件
     export default {

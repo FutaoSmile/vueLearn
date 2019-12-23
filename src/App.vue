@@ -5,27 +5,19 @@
                     id="hello currentId is xxx"
                     message="is message"
                     v-bind:is-active-class="true"/>
-        <!--<div>-->
-        <!--<table border="1" align="center">-->
-        <!--<tr>-->
-        <!--<td>{{env}}</td>-->
-        <!--<td>{{nodeEnv}}</td>-->
-        <!--<td>123</td>-->
-        <!--<td>123</td>-->
-        <!--<td>123</td>-->
-        <!--<td>123</td>-->
-        <!--</tr>-->
-        <!--</table>-->
-        <!--</div>-->
-        <hello-world msg="Welcome to Your Vue.js App hhha "
-                     id="hello currentId is xxx"
-                     message="is message"
-                     v-bind:is-active-class="true"/>
+        <!--路由页面将显示在这里-->
+        <!-- 3.设置路由出口 -->
+        <!-- 路由匹配到的组件将渲染在这里 -->
+        <header-component/>
+        <router-view/>
+        <footer-component/>
     </div>
 </template>
 
 <script>
     import HelloWorld from './components/HelloWorld.vue'
+    import HeaderComponent from './components/layout/HeaderComponent.vue'
+    import FooterComponent from './components/layout/FooterComponent.vue'
 
     export default {
         name: 'app',
@@ -35,7 +27,10 @@
             }
         },
         components: {
-            HelloWorld
+            HelloWorld,
+            HeaderComponent,
+            FooterComponent
+
         },
         props: {
             env: process.env.ENV_NAME,
