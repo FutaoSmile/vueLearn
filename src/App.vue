@@ -1,19 +1,26 @@
 <template>
     <div id="app">
         <img alt="Vue logo" src="./assets/logo.png">
-        <HelloWorld msg="Welcome to Your Vue.js App hhha " id="hello currentId is xxx" message="is message"/>
-        <div>
-            <table border="1" align="center">
-                <tr>
-                    <td>{{env}}</td>
-                    <td>{{nodeEnv}}</td>
-                    <td>123</td>
-                    <td>123</td>
-                    <td>123</td>
-                    <td>123</td>
-                </tr>
-            </table>
-        </div>
+        <HelloWorld msg="Welcome to Your Vue.js App hhha "
+                    id="hello currentId is xxx"
+                    message="is message"
+                    v-bind:is-active-class="true"/>
+        <!--<div>-->
+        <!--<table border="1" align="center">-->
+        <!--<tr>-->
+        <!--<td>{{env}}</td>-->
+        <!--<td>{{nodeEnv}}</td>-->
+        <!--<td>123</td>-->
+        <!--<td>123</td>-->
+        <!--<td>123</td>-->
+        <!--<td>123</td>-->
+        <!--</tr>-->
+        <!--</table>-->
+        <!--</div>-->
+        <hello-world msg="Welcome to Your Vue.js App hhha "
+                     id="hello currentId is xxx"
+                     message="is message"
+                     v-bind:is-active-class="true"/>
     </div>
 </template>
 
@@ -22,6 +29,11 @@
 
     export default {
         name: 'app',
+        data: function () {
+            return {
+                count: 0
+            }
+        },
         components: {
             HelloWorld
         },
